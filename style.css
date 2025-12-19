@@ -63,7 +63,22 @@ nav ul li a:hover {
 
 .leftsection {
   font-size: 3rem;
-  width: 34%;
+  
+}
+
+.leftsection .button {
+  padding: 50px 0;
+  
+}
+
+.leftsection .btn {
+  padding: 12px 24px;
+  color: white;
+  background: #1e2167;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .rightsection {
@@ -122,7 +137,7 @@ hr {
   height: 93px;
   width: 1px;
   background: white;
-  margin: 0 120px;
+  margin: 0 6vw;
 }
 
 
@@ -154,10 +169,91 @@ footer {
   padding: 20px;
   margin-top: 40px;
   color: white;
-  height: 233px;
+  
+  
   
 }
 
 .footer  {
   display: flex;
+  padding: 23px 122px;
+  justify-content: space-evenly;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer > div {
+  width: 223px
+}
+
+footer .footer-text-center {
+  color: gray;
+  text-align: center;
+  padding: 12px 0;
+}
+
+@media screen and (max-width: 1400px) 
+{
+    
+.firstSection {
+  flex-direction: column-reverse;
+  
+}
+
+ .box {
+  flex-direction: column;
+}
+
+.secondsection .vertical {
+  height: unset;
+
+
+}
+.vertical-title, .vertical-Desc{
+  left: 45px;
+}
+
+.secondsection .box {
+  width: 50vw;
+}
+
+nav{
+  flex-direction: column;
+  height: auto;
+}
+
+.leftsection{
+  width: 100% !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rightsection{
+  width: 441px !important;
+  display: flex;
+  justify-content: center;
+}
+
+.secondsection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200vh;
+}
+
+body{
+  min-width: fit-content;
+}
+.rightsection img{
+  width: 45vw;
+  margin-bottom: 73px;
+}
+.vertical-img{
+  top: 122px;
+}
 }
