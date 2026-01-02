@@ -1,32 +1,37 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: white;
   color: black;
-  overflow-x: hidden;
 }
 
-/* ===== NAVBAR ===== */
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #fefae0;
-  padding: 20px;
+  height: 80px;
+  color: black;
+
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 25px;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
   font-size: 20px;
+}
+
+nav ul li {
+  margin: 0 23px;
 }
 
 nav ul li a {
@@ -36,52 +41,88 @@ nav ul li a {
 
 nav ul li a:hover {
   color: rgb(92, 41, 139);
+  font-size: 1.2rem;
 }
 
+/* Logo / Left text */
 .left {
+  text-align: center;
+  padding: 50px;
   font-size: 1.5rem;
 }
 
-/* ===== HERO SECTION ===== */
+/* First Section */
 .firstSection {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 120px 0;
-  flex-wrap: wrap;
 }
 
-.firstSection > div {
+.firstSection>div {
   width: 30%;
 }
 
+
+
 .leftsection {
   font-size: 3rem;
+
+}
+
+.leftsection .button {
+  padding: 50px 0;
+
 }
 
 .leftsection .btn {
   padding: 12px 24px;
-  font-size: 20px;
+  color: black;
   background: #faedcd;
   border: 2px solid black;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 20px;
 }
 
-.rightsection img {
+.rightsection {
+  width: 34%;
+}
+
+.profile-img {
   width: 80%;
+  height: auto;
+  margin: 20px 0;
 }
 
+/* Colors */
 .purple {
   color: rgb(144, 82, 201);
   font-size: 4rem;
 }
 
-/* ===== SECOND SECTION ===== */
+.text-gray {
+  color: grey;
+  margin-top: 10px;
+}
+
+#element {
+  color: rgb(144, 82, 201);
+}
+
+/* Second Section */
 .secondsection {
   max-width: 80vw;
-  margin: 120px auto;
-  text-align: center;
+  margin: auto;
+  height: 80vh;
+
+}
+
+hr {
+  background-color: black;
+  border: 0;
+  height: 1px;
+  margin: 40px 0;
 }
 
 .secondsection h1 {
@@ -89,84 +130,279 @@ nav ul li a:hover {
 }
 
 .secondsection .box {
-  display: flex;
   background: black;
+  width: 80vw;
   height: 2px;
-  margin: 50px 0;
-  width: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 56px 0;
+  display: flex;
 }
 
 .secondsection .vertical {
-  height: 100px;
+  height: 93px;
   width: 1px;
   background: black;
   margin: 0 6vw;
 }
 
-/* ===== ABOUT SECTION ===== */
+
+.vertical-img {
+  width: 23px;
+  position: relative;
+  top: -32px;
+  left: -9px;
+}
+
+.vertical-title {
+  position: relative;
+  top: 75px;
+  width: 150px;
+  font-size: 23px;
+}
+
+.vertical-Desc {
+  position: relative;
+  top: 86px;
+  width: 150px;
+  color: gray;
+  font-size: 15px;
+}
+
+footer {
+  background-color: #d4a373;
+  padding: 20px;
+  margin-top: 40px;
+  color: white;
+}
+
+.footer {
+  display: flex;
+  padding: 23px 122px;
+  justify-content: space-evenly;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.footer .footer-third ul li {
+  margin-right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+
+}
+
+footer .footer-third ul li a {
+
+  color: white;
+
+}
+
+.footer .footer-fourth ul li a {
+  margin-right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+
+}
+
+.footer .footer-third ul {
+  display: flex;
+}
+
+.footer-fourth {
+  font-size: 17px;
+  ;
+}
+
+.footer>div {
+  width: 223px
+}
+
+footer .footer-text-center {
+  color: gray;
+  text-align: center;
+  padding: 12px 0;
+}
+
+@media screen and (max-width: 1400px) {
+
+  .firstSection {
+    flex-direction: column-reverse;
+
+  }
+
+  .box {
+    flex-direction: column;
+  }
+
+  .secondsection .vertical {
+    height: unset;
+
+
+  }
+
+  .vertical-title,
+  .vertical-Desc {
+    left: 45px;
+  }
+
+  .secondsection .box {
+    width: 50vw;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .leftsection {
+    width: 100% !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rightsection {
+    width: 441px !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .secondsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+  }
+
+  body {
+    min-width: fit-content;
+  }
+
+  .rightsection img {
+    width: 45vw;
+    margin-bottom: 73px;
+  }
+
+  .vertical-img {
+    top: 122px;
+  }
+
+  .section {
+    flex-direction: column;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+}
+
 .about-firstSection {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 120px 0;
-  flex-wrap: wrap;
+  height: 100vh;
 }
 
-.about-leftsection,
-.about-rightsection {
+
+.about-leftsection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
-  text-align: center;
+  margin: 150px 0;
+
+
 }
 
 .About-image {
-  height: 400px;
+  height: 80vh;
+  /* adjust as you like */
+  width: auto;
+  /* keeps image ratio */
   border-radius: 10px;
+  margin: 20px;
+  border: 2px solid white;
 }
 
 .about-Title {
-  font-size: 3rem;
+  font-size: 50px;
   color: rgb(144, 82, 201);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+
+}
+
+.about-rightsection {
+  width: 60%;
 }
 
 .name {
-  font-size: 3rem;
+  font-size: 4rem;
+
 }
 
 .work {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .highlight {
   color: #d41fd4;
 }
 
-/* ===== SERVICES ===== */
+.about-text {
+  margin: 30px 0;
+  font-size: 1rem;
+
+}
+
 .section {
   max-width: 90vw;
-  margin: 120px auto;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  margin: 150px auto;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .section-webdeveloper {
+  margin: 50px;
+  border: 2px solid white;
+  padding: 12px;
   background: #faedcd;
-  padding: 20px;
   border-radius: 15px;
-  width: 300px;
-  transition: 0.3s;
+  padding: 20px;
 }
 
 .section-webdeveloper:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(144, 82, 201, 0.4);
+  box-shadow: 10px 0 20px rgba(144, 82, 201, 0.4);
 }
 
-/* ===== PROJECTS ===== */
+
+.section-tittle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.service-tittle {
+  font-size: 2rem;
+}
+
+
+.services-img {
+  height: 167px;
+}
+
+
+
 .projects-section {
   max-width: 80vw;
   margin: 120px auto;
@@ -177,46 +413,67 @@ nav ul li a:hover {
   font-size: 3rem;
   color: rgb(144, 82, 201);
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .projects-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  justify-items: center;
 }
 
 .project-card {
-  background: rgb(8, 8, 93);
+  background-color: rgb(8, 8, 93);
   padding: 30px;
   border-radius: 12px;
   border: 2px solid rgb(144, 82, 201);
-  width: 100%;
-  max-width: 350px;
   transition: 0.3s;
 }
 
 .project-card h2 {
   color: rgb(144, 82, 201);
+  margin-bottom: 15px;
 }
 
 .project-card p {
-  color: #ddd;
+  color: #dcdcdc;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
+
+.project-link {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.project-link:hover {
+  background-color: rgb(144, 82, 201);
+  border-color: rgb(144, 82, 201);
+}
+
 
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 0 20px rgba(144, 82, 201, 0.4);
 }
 
-/* ===== CONTACT ===== */
+/* ===== CONTACT PAGE ===== */
+
 .contact-section {
   max-width: 80vw;
   margin: 120px auto;
-  text-align: center;
+  color: black;
+  height: 50vh;
 }
 
 .contact-heading {
+  text-align: center;
   font-size: 3rem;
   color: rgb(144, 82, 201);
   margin-bottom: 50px;
@@ -224,114 +481,55 @@ nav ul li a:hover {
 
 .contact-container {
   display: flex;
-  justify-content: center;
   gap: 50px;
-  flex-wrap: wrap;
 }
 
-.contact-info,
+.contact-info {
+  width: 40%;
+}
+
+.contact-info h2 {
+  color: #faedcd;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: black;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
 .contact-form {
-  width: 45%;
+  width: 60%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form input,
 .contact-form textarea {
+  background-color: #fefae0;
+  border: 1px solid black;
+  color: black;
   padding: 12px;
   margin-bottom: 15px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  background-color: #fefae0;
+  color: black;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
   border: 1px solid black;
-  background: #fefae0;
-  width: 100%;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background-color: #d4a373;
-  padding: 40px 20px;
-  margin-top: 120px;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.footer ul {
-  list-style: none;
-}
-
-.footer a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-text-center {
-  text-align: center;
-  margin-top: 20px;
-  color: gray;
-}
-
-/* ===== MOBILE & TABLET ===== */
-@media (max-width: 768px) {
-
-  nav {
-    flex-direction: column;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  /* CENTER ALL MAIN SECTIONS */
-  .firstSection,
-  .secondsection,
-  .about-firstSection,
-  .section,
-  .projects-section,
-  .contact-section {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .firstSection {
-    flex-direction: column-reverse;
-  }
-
-  .section-tittle{
-
-    font-size: 2.5rem;
-    color: black;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-    align-items: center;
-  }
-
-  .firstSection > div,
-  .about-leftsection,
-  .about-rightsection,
-  .contact-info,
-  .contact-form {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-  }
-
-  .purple {
-    font-size: 2.5rem;
-  }
-
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: center;
-  }
+.contact-form button:hover {
+  opacity: 0.9;
 }
