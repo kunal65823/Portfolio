@@ -15,7 +15,7 @@
     <header>
         <nav>
             <div class="left">Kunal's Portfolio</div>
-            <div class="right">
+            <div class="right" id="navMenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -23,6 +23,16 @@
                     <li><a href="project.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+            </div>
+            <div class="three-dot-menu" id="threeDotMenu">
+                <button class="dots-btn" id="dotsBtn">⋯</button>
+                <div class="dots-dropdown" id="dotsDropdown">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="project.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
             </div>
         </nav>
         <header>
@@ -99,6 +109,33 @@
 
                 </div>
             </footer>
-</body>
 
-</html>
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+                // Three Dot Menu Toggle
+                const dotsBtn = document.getElementById('dotsBtn');
+                const dotsDropdown = document.getElementById('dotsDropdown');
+
+                dotsBtn.addEventListener('click', function(event) {
+                  event.stopPropagation();
+                  dotsDropdown.classList.toggle('active');
+                });
+
+                // Close dropdown when a link is clicked
+                const dropdownLinks = dotsDropdown.querySelectorAll('a');
+                dropdownLinks.forEach(link => {
+                  link.addEventListener('click', function() {
+                    dotsDropdown.classList.remove('active');
+                  });
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(event) {
+                  if (!event.target.closest('.three-dot-menu')) {
+                    dotsDropdown.classList.remove('active');
+                  }
+                });
+            </script>
+        </body>
+
+        </html>

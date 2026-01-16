@@ -13,35 +13,142 @@ body {
 /* Navbar */
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #fefae0;
   height: 80px;
   color: black;
-
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Left section - Logo */
+.left {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgb(144, 82, 201);
+  white-space: nowrap;
+}
+
+/* Right section - Navigation Menu */
+.right {
+  display: flex;
+  align-items: center;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+}
+
+/* Three Dot Menu */
+.three-dot-menu {
+  display: none;
+  position: relative;
+  z-index: 1001;
+}
+
+.dots-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 24px;
+  color: black;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots-btn:hover {
+  color: rgb(144, 82, 201);
+  transform: scale(1.2);
+}
+
+.dots-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 2px solid rgb(144, 82, 201);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+  min-width: 180px;
+  z-index: 1002;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dots-dropdown.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.dots-dropdown a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.dots-dropdown a:last-child {
+  border-bottom: none;
+}
+
+.dots-dropdown a:hover {
+  background-color: #fefae0;
+  color: rgb(144, 82, 201);
+  padding-left: 25px;
+}
+
+/* Navigation Menu */
 nav ul {
   display: flex;
   list-style: none;
   justify-content: center;
   margin: 0;
   padding: 10px;
-  font-size: 20px;
+  font-size: 18px;
+  gap: 5px;
 }
 
 nav ul li {
-  margin: 0 23px;
+  margin: 0 15px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: black;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
 }
 
 nav ul li a:hover {
-  color: rgb(92, 41, 139);
-  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(144, 82, 201);
 }
 
 /* Logo / Left text */
@@ -72,17 +179,38 @@ nav ul li a:hover {
 
 .leftsection .button {
   padding: 50px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
+.leftsection .button button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .leftsection .btn {
-  padding: 12px 24px;
-  color: black;
-  background: #faedcd;
-  border: 2px solid black;
-  border-radius: 6px;
+  padding: 15px 35px;
+  color: white;
+  background: linear-gradient(135deg, rgb(144, 82, 201), rgb(92, 41, 139));
+  border: 2px solid rgb(144, 82, 201);
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(144, 82, 201, 0.3);
+}
+
+.leftsection .btn:hover {
+  background: linear-gradient(135deg, rgb(92, 41, 139), rgb(144, 82, 201));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(144, 82, 201, 0.5);
+  border-color: #fefae0;
 }
 
 .rightsection {
@@ -228,7 +356,52 @@ footer .footer-text-center {
   padding: 12px 0;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 700px) {
+
+  /* NAVBAR */
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  .left {
+    font-size: 1.2rem;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .three-dot-menu {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+  }
 
   .firstSection {
     flex-direction: column-reverse;
@@ -252,11 +425,6 @@ footer .footer-text-center {
 
   .secondsection .box {
     width: 50vw;
-  }
-
-  nav {
-    flex-direction: column;
-    height: auto;
   }
 
   .leftsection {
@@ -532,4 +700,328 @@ footer .footer-text-center {
 
 .contact-form button:hover {
   opacity: 0.9;
+}
+
+@media screen and (max-width: 455px) {
+
+  /* GENERAL */
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* NAVBAR */
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 65px;
+    padding: 0 12px;
+    align-items: center;
+    position: relative;
+  }
+
+  .left {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .three-dot-menu {
+    display: block;
+  }
+
+  .dots-btn {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .dots-dropdown {
+    right: 0;
+    min-width: 160px;
+  }
+
+  .dots-dropdown a {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  /* FIRST SECTION */
+  .firstSection {
+    flex-direction: column-reverse;
+    margin: 30px 15px;
+    text-align: center;
+    padding: 0;
+  }
+
+  .firstSection>div {
+    width: 100%;
+  }
+
+  .leftsection {
+    font-size: 1.5rem;
+  }
+
+  .leftsection .button {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .leftsection .button button {
+    width: 100%;
+  }
+
+  .leftsection .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(144, 82, 201, 0.3);
+  }
+
+  .leftsection .btn:hover {
+    box-shadow: 0 6px 18px rgba(144, 82, 201, 0.4);
+  }
+
+  .purple {
+    font-size: 2rem;
+  }
+
+  .text-gray {
+    font-size: 0.9rem;
+  }
+
+  .rightsection {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .profile-img {
+    width: 80%;
+    max-width: 100%;
+  }
+
+  /* SECOND SECTION */
+  .secondsection {
+    max-width: 95vw;
+    margin: 30px auto;
+    height: auto;
+    padding: 0 10px;
+  }
+
+  .secondsection h1 {
+    font-size: 1.5rem;
+  }
+
+  .secondsection .box {
+    width: 95vw;
+    margin: 30px auto;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .secondsection .vertical {
+    height: auto;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vertical-img {
+    width: 30px;
+    top: 0;
+    left: 0;
+    position: static;
+  }
+
+  .vertical-title {
+    position: static;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .vertical-Desc {
+    position: static;
+    width: 100%;
+    font-size: 13px;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+
+  /* ABOUT SECTION */
+  .about-firstSection {
+    flex-direction: column;
+    height: auto;
+    margin: 0;
+  }
+
+  .about-leftsection,
+  .about-rightsection {
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .About-image {
+    height: 35vh;
+    width: auto;
+  }
+
+  .about-Title {
+    font-size: 2rem;
+    margin: 10px;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .work {
+    font-size: 1.2rem;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+    margin: 15px 0;
+  }
+
+  /* SERVICES SECTION */
+  .section {
+    flex-direction: column;
+    margin: 40px 15px;
+    max-width: 95vw;
+  }
+
+  .section-tittle {
+    font-size: 2.5rem;
+  }
+
+  .section-webdeveloper {
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  .service-tittle {
+    font-size: 1.3rem;
+  }
+
+  .services-img {
+    height: 120px;
+  }
+
+  /* PROJECTS SECTION */
+  .projects-section {
+    max-width: 95vw;
+    margin: 40px 15px;
+  }
+
+  .projects-heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+
+  .project-link {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    max-width: 95vw;
+    margin: 40px 15px;
+    height: auto;
+  }
+
+  .contact-heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .contact-form button {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  .footer {
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer>div {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footer .footer-third ul li {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .footer .footer-fourth ul li a {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  footer .footer-text-center {
+    font-size: 0.85rem;
+    padding: 10px 0;
+  }
 }
