@@ -59,10 +59,22 @@
 
                         <!-- Right side form -->
                         <div class="contact-form">
-                            <form>
-                                <input type="text" placeholder="Your Name" required>
-                                <input type="email" placeholder="Your Email" required>
-                                <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <form
+                              action="https://formspree.io/f/xeeekzar"
+                              method="POST"
+                            >
+                                <label>
+                                    Your Name:
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </label>
+                                <label>
+                                    Your Email:
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                </label>
+                                <label>
+                                    Your Message:
+                                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                                </label>
                                 <button type="submit">Send Message</button>
                             </form>
                         </div>
